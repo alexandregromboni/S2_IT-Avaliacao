@@ -1,0 +1,53 @@
+﻿@model S2Games.Web.Models.EmprestimoViewModel
+
+@{
+    ViewBag.Title = "Inserir Emprestimo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Inserir Emprestimo</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IdJogo, "ID_JOGO", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ID_JOGO", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.IdJogo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IdLogin, "ID_LOGIN", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ID_LOGIN", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.IdLogin, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-1">
+                        <input type="submit" value="Incluir" class="btn btn-success" />
+                    </div>
+                    <div class="col-md-1">
+                        <a href='@Url.Action("Create", "Emprestimo")' class="btn btn-warning">
+                            Limpar
+                        </a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href='@Url.Action("Index", "Emprestimo")' class="btn btn-primary">
+                            Voltar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

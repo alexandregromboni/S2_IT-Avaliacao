@@ -1,0 +1,6 @@
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Entities\bin\Debug\S2Games.Entities.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Entities\bin\Debug\S2Games.Entities.pdb
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Entities\obj\Debug\S2Games.Entities.csprojResolveAssemblyReference.cache
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Entities\obj\Debug\S2Games.Entities.csproj.CoreCompileInputs.cache
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Entities\obj\Debug\S2Games.Entities.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Entities\obj\Debug\S2Games.Entities.pdb

@@ -1,0 +1,73 @@
+﻿@model S2Games.Web.Models.UsuarioViewModel
+
+@{
+    ViewBag.Title = "Detalhamento Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+        <div class="form-horizontal">
+            <div class="col-md-offset-1">
+                <h4>Detalhamento Usuário</h4>
+            </div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsAtivo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IsAtivo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Perfil)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Perfil)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Data_Criacao)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Data_Criacao)
+                </dd>
+
+            </dl>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-1">
+                    <a href='@Url.Action("Edit", "Acesso", new { id = Model.Id_Usuario })' class="btn btn-default">
+                        Alterar
+                    </a>
+                </div>
+                <div class="col-md-1">
+                    <a href='@Url.Action("Index", "Acesso")' class="btn btn-primary">
+                        Voltar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

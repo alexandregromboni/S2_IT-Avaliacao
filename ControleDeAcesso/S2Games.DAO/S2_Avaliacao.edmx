@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="S2_AvaliacaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Emprestimo">
+          <Key>
+            <PropertyRef Name="Id_Emprestimo" />
+          </Key>
+          <Property Name="Id_Emprestimo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Jogo" Type="int" Nullable="false" />
+          <Property Name="Id_Usuario" Type="int" Nullable="false" />
+          <Property Name="Data_Emprestimo" Type="datetime" Nullable="false" />
+          <Property Name="Data_Devolucao" Type="datetime" />
+          <Property Name="Status_Emprestimo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Jogo">
+          <Key>
+            <PropertyRef Name="Id_Jogo" />
+          </Key>
+          <Property Name="Id_Jogo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Plataforma" Type="int" />
+          <Property Name="Data_Criacao" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Senha" Type="varchar" MaxLength="50" />
+          <Property Name="Data_Criacao" Type="datetime" Nullable="false" />
+          <Property Name="Perfil" Type="int" Nullable="false" />
+          <Property Name="Is_Ativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Emprestim__Id_Jo__276EDEB3">
+          <End Role="Jogo" Type="Self.Jogo" Multiplicity="1" />
+          <End Role="Emprestimo" Type="Self.Emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jogo">
+              <PropertyRef Name="Id_Jogo" />
+            </Principal>
+            <Dependent Role="Emprestimo">
+              <PropertyRef Name="Id_Jogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Emprestim__Id_Us__286302EC">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Emprestimo" Type="Self.Emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Principal>
+            <Dependent Role="Emprestimo">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="S2_AvaliacaoModelStoreContainer">
+          <EntitySet Name="Emprestimo" EntityType="Self.Emprestimo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jogo" EntityType="Self.Jogo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Emprestim__Id_Jo__276EDEB3" Association="Self.FK__Emprestim__Id_Jo__276EDEB3">
+            <End Role="Jogo" EntitySet="Jogo" />
+            <End Role="Emprestimo" EntitySet="Emprestimo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Emprestim__Id_Us__286302EC" Association="Self.FK__Emprestim__Id_Us__286302EC">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Emprestimo" EntitySet="Emprestimo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="S2_AvaliacaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Emprestimo">
+          <Key>
+            <PropertyRef Name="Id_Emprestimo" />
+          </Key>
+          <Property Name="Id_Emprestimo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Jogo" Type="Int32" Nullable="false" />
+          <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+          <Property Name="Data_Emprestimo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_Devolucao" Type="DateTime" Precision="3" />
+          <Property Name="Status_Emprestimo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Jogo" Relationship="Self.FK__Emprestim__Id_Jo__276EDEB3" FromRole="Emprestimo" ToRole="Jogo" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Emprestim__Id_Us__286302EC" FromRole="Emprestimo" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Jogo">
+          <Key>
+            <PropertyRef Name="Id_Jogo" />
+          </Key>
+          <Property Name="Id_Jogo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Plataforma" Type="Int32" />
+          <Property Name="Data_Criacao" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Emprestimoes" Relationship="Self.FK__Emprestim__Id_Jo__276EDEB3" FromRole="Jogo" ToRole="Emprestimo" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Data_Criacao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Perfil" Type="Int32" Nullable="false" />
+          <Property Name="Is_Ativo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Emprestimoes" Relationship="Self.FK__Emprestim__Id_Us__286302EC" FromRole="Usuario" ToRole="Emprestimo" />
+        </EntityType>
+        <Association Name="FK__Emprestim__Id_Jo__276EDEB3">
+          <End Role="Jogo" Type="Self.Jogo" Multiplicity="1" />
+          <End Role="Emprestimo" Type="Self.Emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jogo">
+              <PropertyRef Name="Id_Jogo" />
+            </Principal>
+            <Dependent Role="Emprestimo">
+              <PropertyRef Name="Id_Jogo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Emprestim__Id_Us__286302EC">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Emprestimo" Type="Self.Emprestimo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Principal>
+            <Dependent Role="Emprestimo">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="S2_AvaliacaoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Emprestimoes" EntityType="Self.Emprestimo" />
+          <EntitySet Name="Jogoes" EntityType="Self.Jogo" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Emprestim__Id_Jo__276EDEB3" Association="Self.FK__Emprestim__Id_Jo__276EDEB3">
+            <End Role="Jogo" EntitySet="Jogoes" />
+            <End Role="Emprestimo" EntitySet="Emprestimoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Emprestim__Id_Us__286302EC" Association="Self.FK__Emprestim__Id_Us__286302EC">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Emprestimo" EntitySet="Emprestimoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="S2_AvaliacaoModelStoreContainer" CdmEntityContainer="S2_AvaliacaoEntities">
+          <EntitySetMapping Name="Emprestimoes">
+            <EntityTypeMapping TypeName="S2_AvaliacaoModel.Emprestimo">
+              <MappingFragment StoreEntitySet="Emprestimo">
+                <ScalarProperty Name="Id_Emprestimo" ColumnName="Id_Emprestimo" />
+                <ScalarProperty Name="Id_Jogo" ColumnName="Id_Jogo" />
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Data_Emprestimo" ColumnName="Data_Emprestimo" />
+                <ScalarProperty Name="Data_Devolucao" ColumnName="Data_Devolucao" />
+                <ScalarProperty Name="Status_Emprestimo" ColumnName="Status_Emprestimo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jogoes">
+            <EntityTypeMapping TypeName="S2_AvaliacaoModel.Jogo">
+              <MappingFragment StoreEntitySet="Jogo">
+                <ScalarProperty Name="Id_Jogo" ColumnName="Id_Jogo" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Plataforma" ColumnName="Plataforma" />
+                <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="S2_AvaliacaoModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />
+                <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+                <ScalarProperty Name="Is_Ativo" ColumnName="Is_Ativo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

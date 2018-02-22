@@ -1,0 +1,13 @@
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\S2Games.DAL.dll.config
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\S2Games.DAL.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\S2Games.DAL.pdb
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\EntityFramework.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\S2Games.Entities.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\S2Games.Entities.pdb
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\EntityFramework.xml
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\obj\Debug\S2Games.DAL.csprojResolveAssemblyReference.cache
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\obj\Debug\S2Games.DAL.csproj.CoreCompileInputs.cache
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\obj\Debug\S2Games.DAL.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.DAO\obj\Debug\S2Games.DAL.pdb

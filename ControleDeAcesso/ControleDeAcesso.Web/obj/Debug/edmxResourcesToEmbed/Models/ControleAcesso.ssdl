@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DEVMEDIAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACESSO">
+    <Key>
+      <PropertyRef Name="ID_LOGIN" />
+    </Key>
+    <Property Name="ID_LOGIN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+    <Property Name="SENHA" Type="varchar" MaxLength="100" />
+    <Property Name="ATIVO" Type="char" MaxLength="1" />
+    <Property Name="PERFIL" Type="varchar" MaxLength="15" />
+    <Property Name="NOME" Type="varchar" MaxLength="30" />
+    <Property Name="SOBRENOME" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="EMPRESTIMO">
+    <Key>
+      <PropertyRef Name="ID_EMPRESTIMO" />
+    </Key>
+    <Property Name="ID_EMPRESTIMO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_JOGO" Type="int" Nullable="false" />
+    <Property Name="ID_LOGIN" Type="int" Nullable="false" />
+    <Property Name="DATA_EMPRESTIMO" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JOGO">
+    <Key>
+      <PropertyRef Name="ID_JOGO" />
+    </Key>
+    <Property Name="ID_JOGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="PLATAFORMA" Type="int" />
+  </EntityType>
+  <Association Name="FK__EMPRESTIM__ID_JO__276EDEB3">
+    <End Role="JOGO" Type="Self.JOGO" Multiplicity="1" />
+    <End Role="EMPRESTIMO" Type="Self.EMPRESTIMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JOGO">
+        <PropertyRef Name="ID_JOGO" />
+      </Principal>
+      <Dependent Role="EMPRESTIMO">
+        <PropertyRef Name="ID_JOGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMPRESTIM__ID_LO__286302EC">
+    <End Role="ACESSO" Type="Self.ACESSO" Multiplicity="1" />
+    <End Role="EMPRESTIMO" Type="Self.EMPRESTIMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACESSO">
+        <PropertyRef Name="ID_LOGIN" />
+      </Principal>
+      <Dependent Role="EMPRESTIMO">
+        <PropertyRef Name="ID_LOGIN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DEVMEDIAModelStoreContainer">
+    <EntitySet Name="ACESSO" EntityType="Self.ACESSO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPRESTIMO" EntityType="Self.EMPRESTIMO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JOGO" EntityType="Self.JOGO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__EMPRESTIM__ID_JO__276EDEB3" Association="Self.FK__EMPRESTIM__ID_JO__276EDEB3">
+      <End Role="JOGO" EntitySet="JOGO" />
+      <End Role="EMPRESTIMO" EntitySet="EMPRESTIMO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMPRESTIM__ID_LO__286302EC" Association="Self.FK__EMPRESTIM__ID_LO__286302EC">
+      <End Role="ACESSO" EntitySet="ACESSO" />
+      <End Role="EMPRESTIMO" EntitySet="EMPRESTIMO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

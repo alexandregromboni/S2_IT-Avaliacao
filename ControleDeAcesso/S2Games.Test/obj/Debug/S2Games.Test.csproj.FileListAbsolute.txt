@@ -1,0 +1,13 @@
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\S2Games.Test.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\S2Games.Test.pdb
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\obj\Debug\S2Games.Test.csprojResolveAssemblyReference.cache
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\obj\Debug\S2Games.Test.csproj.CoreCompileInputs.cache
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\obj\Debug\S2Games.Test.dll
+C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\S2Games.Test\obj\Debug\S2Games.Test.pdb

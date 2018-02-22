@@ -1,0 +1,48 @@
+﻿@model S2Games.Web.Models.JogoViewModel
+
+@{
+    ViewBag.Title = "Detalhamento Jogo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+        <div class="form-horizontal">
+            <div class="col-md-offset-1">
+                <h4>Detalhamento Jogo</h4>
+            </div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Descricao)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Plataforma)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Plataforma)
+                </dd>
+
+            </dl>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-1">
+                    <a href='@Url.Action("Edit", "Jogo", new { id = Model.IdJogo })' class="btn btn-default">
+                        Alterar
+                    </a>
+                </div>
+                <div class="col-md-1">
+                    <a href='@Url.Action("Index", "Jogo")' class="btn btn-primary">
+                        Voltar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

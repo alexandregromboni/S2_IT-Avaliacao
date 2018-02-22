@@ -1,0 +1,70 @@
+﻿@model PagedList.IPagedList<S2Games.Web.Models.JogoViewModel>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Jogos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-10 col-md-offset-1">
+
+    <div class="panel panel-default panel-table">
+        <div class="panel-body">
+            <div class="col-md-offset-1">
+                <a href='@Url.Action("Create", "Jogo")' class="btn btn-primary" style="margin-top:10px;">
+                    Novo Jogo
+                </a>
+            </div>
+
+            <hr />
+
+            <table class="table table-striped table-bordered table-list">
+                <thead>
+                    <tr>
+                        <th width="60%">
+                            JOGO
+                        </th>
+                        <th width="25%">
+                            PLATAFORMA
+                        </th>
+                        <th width="15%">AÇÕES</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descricao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Plataforma)
+                            </td>
+                            <td class="actions form-inline">
+                                <a href='@Url.Action("Details", "Jogo", new { id = item.IdJogo })' class="btn btn-primary" title="Detalhes">
+                                    <span class="glyphicon glyphicon glyphicon-search"></span>
+                                </a>
+                                <a href='@Url.Action("Edit", "Jogo", new { id = item.IdJogo })' class="btn btn-primary" title="Alterar">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <a href='@Url.Action("Delete", "Jogo", new { id = item.IdJogo })' class="btn btn-primary" title="Excluir">
+                                    <span class="glyphicon glyphicon glyphicon-trash"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                }
+            </table>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col col-xs-7 col-xs-offset-5">
+                    <ul class="pagination hidden-xs">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", "Acesso", new { pagina = page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
