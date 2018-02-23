@@ -7,7 +7,8 @@ Seus amigos vivem pedindo seus jogos emprestados. Muitas vezes você quer jogar 
 Instalação
 
 Rode o arquivo de banco de dados em anexo para criar a DataBase e as tabelas. 
-O usuário para login é: teste@s2.com.br A senha é: 123
+
+Para logar no sistema, utilize o usuário: 'teste@s2.com.br' A senha é: '123'
 
 Configure a ConnectionStrings com as configurações da sua base de dados. Configurar no AppConfig do projeto S2Games.DAL e S2Games.Test. Configurar
 também o Web.Config do Projeto S2Games.Web.
