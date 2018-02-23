@@ -1,7 +1,0 @@
-C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\Common\bin\Debug\Common.dll.config
-C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\Common\bin\Debug\Common.dll
-C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\Common\bin\Debug\Common.pdb
-C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
-C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
-C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\Common\obj\Debug\Common.dll
-C:\Users\alexandre.gromboni\source\repos\ControleDeAcesso\Common\obj\Debug\Common.pdb
